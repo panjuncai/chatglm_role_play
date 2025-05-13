@@ -43,6 +43,8 @@ class CharacterMeta(TypedDict):
     """bot扮演的角色的名字"""
     user_name: str
     """用户的名字"""
+    chat_background: str
+    """聊天背景"""
 
 
 def filter_text_msg(messages: MsgList) -> TextMsgList:

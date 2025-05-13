@@ -145,6 +145,13 @@ def generate_chat_scene_prompt(messages: TextMsgList, meta: CharacterMeta) -> Ge
 {meta["user_info"]}
 """.rstrip()
 
+    if meta.get("chat_background", ""):
+        instruction += f"""
+
+聊天背景：
+{meta["chat_background"]}
+""".rstrip()
+
     if messages:
         instruction += "\n\n对话：" + '\n'.join((meta['bot_name'] if msg['role'] == "assistant" else meta['user_name']) + '：' + msg['content'].strip() for msg in messages)
     

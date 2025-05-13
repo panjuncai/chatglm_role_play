@@ -51,7 +51,8 @@ if "meta" not in st.session_state:
         "user_info": "",
         "bot_info": "",
         "bot_name": "",
-        "user_name": ""
+        "user_name": "",
+        "chat_background": ""
     }
 
 
@@ -64,8 +65,12 @@ meta_labels = {
     "bot_name": "角色名",
     "user_name": "用户名", 
     "bot_info": "角色人设",
-    "user_info": "用户人设"
+    "user_info": "用户人设",
+    "chat_background": "聊天背景"
 }
+
+# 添加聊天背景输入框
+st.text_area(label="聊天背景", key="chat_background", on_change=lambda : st.session_state["meta"].update(chat_background=st.session_state["chat_background"]), help="本次聊天的背景信息")
 
 # 2x2 layout
 with st.container():
@@ -160,7 +165,8 @@ with st.container():
                 "user_info": "",
                 "bot_info": "",
                 "bot_name": "",
-                "user_name": ""
+                "user_name": "",
+                "chat_background": ""
             }
             st.rerun()
 

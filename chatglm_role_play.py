@@ -10,7 +10,7 @@ python-dotenv
 
 运行方式：
 ```bash
-streamlit run characterglm_api_demo_streamlit.py
+streamlit run chatglm_role_play.py
 ```
 """
 import os
